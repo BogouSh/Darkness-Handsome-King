@@ -18,36 +18,36 @@ public class LoginButtonListener implements ActionListener {
         this.txtPassword=txtPassword;
     }
     @Override
-//    public void actionPerformed(ActionEvent e) {
-//        //单击登录按钮触发的此事件内容
-//        this.username=txtUsername.getText().trim();
-//        this.password=txtPassword.getText().trim();
-//        DBConnection dbConnection=DBConnection.getInstance();
-//        Connection conn=dbConnection.getConnection();
-//        try {
-//            ppStmt=conn.prepareStatement(sql);
-//            rs=ppStmt.executeQuery();
-//            while(rs.next()) {
-//                int id=rs.getInt("id");
-//                String pswd=rs.getString("pswd");
-//                String role=rs.getString("role");
-//                if(username.equals(id+"")&&pswd.equals(password)) {
-//                    System.out.println("Dear "+role+", Login Success");
-//                }
-//            }
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        }finally {
-//            try{
-//                if(rs!=null)rs.close();
-//                if(ppStmt!=null)ppStmt.close();
-//                if(conn!=null)conn.close();
-//            }catch (SQLException exc)
-//            {
-//                exc.printStackTrace();
-//            }
-//        }
-//
-//
-//    }
-//}
+    public void actionPerformed(ActionEvent e) {
+        //单击登录按钮触发的此事件内容
+        this.username=txtUsername.getText().trim();
+        this.password=txtPassword.getText().trim();
+        DBConnection dbConnection=DBConnection.getInstance();
+        Connection conn=dbConnection.getConnection();
+        try {
+            ppStmt=conn.prepareStatement(sql);
+            rs=ppStmt.executeQuery();
+            while(rs.next()) {
+                int id=rs.getInt("id");
+                String pswd=rs.getString("pswd");
+                String role=rs.getString("role");
+                if(username.equals(id+"")&&pswd.equals(password)) {
+                    System.out.println("Dear "+role+", Login Success");
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }finally {
+            try{
+                if(rs!=null)rs.close();
+                if(ppStmt!=null)ppStmt.close();
+                if(conn!=null)conn.close();
+            }catch (SQLException exc)
+            {
+                exc.printStackTrace();
+            }
+        }
+
+
+    }
+}
