@@ -18,7 +18,6 @@ public class LoginButtonListener implements ActionListener {
         this.txtPassword=txtPassword;
     }
 
-    //提交一下
     @Override
     public void actionPerformed(ActionEvent e) {
         //单击登录按钮触发的此事件内容
